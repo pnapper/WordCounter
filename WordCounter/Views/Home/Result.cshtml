@@ -1,0 +1,20 @@
+<head>
+  <title>Word Counter!</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+</head>
+
+<body>
+
+  <h2>Word Counter Results<h2>
+
+  @if(Model.RepeatCounter() == 0)
+  {
+  <h2>Sorry you didn't use your word in the sentence.</h2>
+  }
+  else
+  {
+  <h2>Your word repeats @Model.RepeatCounter() time/s!</h2>
+  }
+
+  <p><a href="/">Try another word and sentence!</a></p>
+</body>
