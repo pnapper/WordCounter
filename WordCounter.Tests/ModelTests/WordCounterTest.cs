@@ -11,31 +11,32 @@ namespace WordCounter.Tests
   {
 
     [TestMethod]
-    public void CompareStrings_CompareWords_True()
+    public void CompareWords_CountRepeats_Total()
     {
       //Arrange
-      WordChecker newWord = new WordChecker();
+      CountWords newWord = new CountWords("run", "run");
+      var expected = 1;
 
       //action
-      var result = newWord.WordCount("run", "run");
-      List<string> expected = new List<string> {"run"};
+      // var result = newWord.WordChecker("run", "run");
+      int result = newWord.RepeatCounter();
 
       //Assert
-      CollectionAssert.AreEqual(expected, result);
+      Assert.AreEqual(expected, result);
     }
 
-    [TestMethod]
-    public void CompareStrings_CompareWords_False()
-    {
-      //Arrange
-      WordChecker newWord = new WordChecker();
-
-      //action
-      var result = newWord.WordCount("run", "jog");
-      List<string> expected = new List<string> {"run"};
-
-      //Assert
-      CollectionAssert.AreEqual(expected, result);
-    }
+    // [TestMethod]
+    // public void CompareStrings_CompareWords_False()
+    // {
+    //   //Arrange
+    //   WordChecker newWord = new WordChecker();
+    //
+    //   //action
+    //   var result = newWord.WordCount("run", "jog");
+    //   List<string> expected = new List<string> {"run"};
+    //
+    //   //Assert
+    //   CollectionAssert.AreEqual(expected, result);
+    // }
   }
 }

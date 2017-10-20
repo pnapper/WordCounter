@@ -3,33 +3,64 @@ using System;
 
 namespace WordCounter.Models
 {
-  public class WordChecker
+  public class CountWords
   {
+    private string _word;
+    private string _sentence;
 
-    public List<string> WordCount(string userWord, string userSentence)
+    public CountWords(string word, string sentence)
     {
+      _word = word.ToString();
+      _sentence = sentence;
+    }
 
-      List<string> countList = new List<string> {};
+    public string GetWord()
+    {
+      return _word;
+    }
 
-      string word = userWord.ToUpper();
-      userSentence.ToUpper();
-      string[] splitWords = userSentence.Split();
-          Console.WriteLine(splitWords);
+    public string GetSentence()
+    {
+      return _sentence;
+    }
 
-      foreach (string checkWord in splitWords)
+    public int RepeatCounter()
+    {
+      var wordTotal = 0;
+      string[] splitWords = _sentence.Split();
+      foreach(string matchWord in splitWords)
+      {
+        if(_word == matchWord.ToString())
         {
-          if (userWord == splitWords.ToString())
-          {
-            countList.Add(checkWord);
-            Console.WriteLine(checkWord);
-            Console.WriteLine(countList);
-            return countList;
-          }
-          else
-          {
-            countList.Add("No matches");
-            Console.WriteLine("No matches.");
-          }
+          wordTotal += 1;
+        }
+      }
+      return wordTotal;
+    }
+  }
+}
+
+      //
+      // string word = userWord.ToUpper();
+      // userSentence.ToUpper();
+      // string[] splitWords = userSentence.Split();
+      //     Console.WriteLine(splitWords);
+      //
+      // foreach (string checkWord in splitWords)
+      //   {
+      //     if (checkWord == word)
+      //     {
+      //       countList.Add(checkWord);
+      //       Console.WriteLine(checkWord);
+      //       Console.WriteLine(countList);
+      //       return countList;
+      //     }
+      //     else
+      //     {
+      //       countList.Add("No matches");
+      //       Console.WriteLine("No matches.");
+      //       return countList;
+      //     }
 
 
       // if (userWord == wordList)
@@ -41,7 +72,7 @@ namespace WordCounter.Models
       // }
       //
       // return countList[];
-      }
-    }
-  }
-}
+//       }
+//     }
+//   }
+// }
