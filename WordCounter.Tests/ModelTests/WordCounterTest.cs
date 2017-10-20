@@ -11,16 +11,17 @@ namespace WordCounter.Tests
   {
 
     [TestMethod]
-    public void CompareWords_CompareString_True()
+    public void CompareStrings_CompareWords_True()
     {
       //Arrange
       WordChecker newWord = new WordChecker();
 
       //action
-      var result = newWord.Count("run", "run");
-      var expected = 1;
-
+      var result = newWord.WordCount("run", "run");
+      List<string> expected = new List<string> {"run"};
 
       //Assert
       CollectionAssert.AreEqual(expected, result);
     }
+  }
+}
