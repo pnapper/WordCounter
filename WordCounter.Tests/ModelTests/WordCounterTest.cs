@@ -23,5 +23,19 @@ namespace WordCounter.Tests
       //Assert
       CollectionAssert.AreEqual(expected, result);
     }
+
+    [TestMethod]
+    public void CompareStrings_CompareWords_False()
+    {
+      //Arrange
+      WordChecker newWord = new WordChecker();
+
+      //action
+      var result = newWord.WordCount("run", "jog");
+      List<string> expected = new List<string> {"run"};
+
+      //Assert
+      CollectionAssert.AreEqual(expected, result);
+    }
   }
 }

@@ -11,7 +11,8 @@ namespace WordCounter.Models
 
       List<string> countList = new List<string> {};
 
-      string word = userWord;
+      string word = userWord.ToUpper();
+      userSentence.ToUpper();
       string[] splitWords = userSentence.Split();
           Console.WriteLine(splitWords);
 
